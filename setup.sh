@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
-# Date        : 09 May 2019,
+# Date        : 10 May 2019,
 # Description : Installing openjdk, tomcat, redis and maven on Ubuntu.
 
 # Note: Please run this script with sudo privilage.
