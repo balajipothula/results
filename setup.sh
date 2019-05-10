@@ -2,7 +2,7 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 09 May 2019,
-# Description : Installing openjdk, maven, docker on Ubuntu.
+# Description : Installing openjdk, tomcat, redis and maven on Ubuntu.
 
 # Note: Please run this script with sudo privilage.
 
