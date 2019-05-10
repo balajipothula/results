@@ -27,4 +27,4 @@ cd $HOME                                                                        
   && rm apache-maven-$MVN_VER-bin.tar.gz
 
 # creating a deployable JAR file.
-mvn -f $HOME/results/pom.xml clean package
+mvn -f $HOME/results/pom.xml clean install
