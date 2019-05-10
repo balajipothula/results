@@ -17,7 +17,7 @@ DEBIAN_FRONTEND=noninteractive apt -y upgrade
 
 # installing openjdk8.
 # maven3.3+ require jdk1.7+
-apt install -y openjdk-8-jdk redis-server
+apt install -y openjdk-8-jdk
 
 cd $HOME                                                                                                         \
   && wget http://mirrors.estointernet.in/apache/maven/maven-3/$MVN_VER/binaries/apache-maven-$MVN_VER-bin.tar.gz \
@@ -27,8 +27,4 @@ cd $HOME                                                                        
   && rm apache-maven-$MVN_VER-bin.tar.gz
 
 # creating a deployable JAR file.
-mvn -f $HOME/genfakedata/pom.xml clean package
-
-# running fake data generator JAR file.
-# generating data and inserting into redis db. 
-java -jar $HOME/genfakedata.jar
+mvn -f $HOME/results/pom.xml clean package
