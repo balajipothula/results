@@ -17,7 +17,7 @@ DEBIAN_FRONTEND=noninteractive apt -y upgrade
 
 # installing openjdk8.
 # maven3.3+ require jdk1.7+
-apt install -y openjdk-8-jdk
+apt install -y openjdk-8-jdk redis-server
 
 cd $HOME                                                                                                         \
   && wget http://mirrors.estointernet.in/apache/maven/maven-3/$MVN_VER/binaries/apache-maven-$MVN_VER-bin.tar.gz \
