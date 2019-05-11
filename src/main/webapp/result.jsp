@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ page import="java.util.Map"%>
 <%@ page import="redis.clients.jedis.Jedis"%>
-<%@ page
-	import="redis.clients.jedis.exceptions.JedisConnectionException"%>
+<%@ page import="redis.clients.jedis.exceptions.JedisConnectionException"%>
 
 <!DOCTYPE html>
 <html>
@@ -103,7 +101,7 @@ input[type=submit] {
 	</div>
 
 	<%
-	  final String host = "13.232.222.133";
+	  final String host = "127.0.0.1";
 	  final int port = 6379;
 	  final int lb = 10000;
 	  final int ub = 99999;
