@@ -1,4 +1,4 @@
-## student fake exam result generation and retrieval webapp.
+## student fake exam result retrieval webapp.
 ### alpine linux image with openjdk-8-jre, tomcat-native, sqlite, redis.
 ### Author: BALAJI POTHULA <*balaji.pothula@techie.com*>
 
