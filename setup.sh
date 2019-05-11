@@ -46,7 +46,8 @@ cd $HOME                                                                        
   && rm apache-maven-$MVN_VER-bin.tar.gz
 
 # extracting webapp.tar.gz
-tar xzf $HOME/results/webapp.tar.gz -C $HOME/results
+tar xzf $HOME/results/webapp.tar.gz -C $HOME/results \
+  && rm $HOME/results/webapp.tar.gz
 
 # creating a deployable JAR file.
 mvn -f $HOME/results/pom.xml clean install
