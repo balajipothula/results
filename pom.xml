@@ -3,7 +3,9 @@
   <groupId>com.bit</groupId>
   <artifactId>results</artifactId>
   <packaging>war</packaging>
+  <!--
   <version>1.0.0</version>
+  -->
   <name>results</name>
   <url>http://maven.apache.org</url>
   
