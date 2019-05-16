@@ -45,7 +45,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>ROOT</finalName>
+    <finalName>results</finalName>
     <plugins>
       <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
       <plugin>
