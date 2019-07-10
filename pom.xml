@@ -4,12 +4,11 @@
   <groupId>com.bit</groupId>
   <artifactId>results</artifactId>
   <packaging>war</packaging>
-  <version>1.0.0</version>
+  <version>1.0</version>
   <name>results</name>
   <url>http://maven.apache.org</url>
 
   <properties>
-    <nexus.oss.ip>13.126.41.211</nexus.oss.ip>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.12</junit.version>
     <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
@@ -23,14 +22,14 @@
       <uniqueVersion>true</uniqueVersion>
       <id>nexus</id>
       <name>Snapshots</name>
-      <url>http://13.126.41.211:8081/nexus/content/repositories/snapshots/</url>
+      <url>http://13.233.186.125:8081/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
 
     <repository>
       <uniqueVersion>false</uniqueVersion>
       <id>nexus</id>
       <name>Releases</name>
-      <url>http://13.126.41.211:8081/nexus/content/repositories/releases/</url>
+      <url>http://13.233.186.125:8081/nexus/content/repositories/releases/</url>
     </repository>
 
   </distributionManagement>
