@@ -22,14 +22,14 @@
       <uniqueVersion>true</uniqueVersion>
       <id>nexus</id>
       <name>Snapshots</name>
-      <url>http://13.233.186.125:8081/nexus/content/repositories/snapshots/</url>
+      <url>http://nexus.oss.balaji.network:8081/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
 
     <repository>
       <uniqueVersion>false</uniqueVersion>
       <id>nexus</id>
       <name>Releases</name>
-      <url>http://13.233.186.125:8081/nexus/content/repositories/releases/</url>
+      <url>http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/</url>
     </repository>
 
   </distributionManagement>
