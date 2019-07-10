@@ -22,9 +22,21 @@ pipeline {
 
         script {
           withMaven(jdk: 'jdk8u212', maven: 'maven3.6.1') {
-            sh 'mvn clean install'
+            sh 'mvn clean install deploy'
           }
 
+        }
+
+      }
+
+    }
+
+    stage('eMail Notification') {
+
+      steps {
+
+        script {
+          emailext body: 'Build Information', recipientProviders: [developers()], subject: 'Build Report', to: 'balan.pothula@gmail.com'
         }
 
       }
