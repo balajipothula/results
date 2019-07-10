@@ -4,7 +4,7 @@
   <groupId>com.bit</groupId>
   <artifactId>results</artifactId>
   <packaging>war</packaging>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
   <name>results</name>
   <url>http://maven.apache.org</url>
 
@@ -15,7 +15,7 @@
     <jsp.api.version>2.0</jsp.api.version>
     <jedis.version>3.0.1</jedis.version>
   </properties>  
-
+  <!--
   <distributionManagement>
 
     <snapshotRepository>
@@ -33,7 +33,7 @@
     </repository>
 
   </distributionManagement>
-   
+  --> 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
