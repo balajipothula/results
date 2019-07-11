@@ -3,8 +3,10 @@ pipeline {
   agent { label 'master' }
   
   environment {
-    ARTIFACT_ID = readMavenPom().getArtifactId()
-    VERSION     = readMavenPom().getVersion()
+    groupId    = readMavenPom().groupId()
+    artifactId = readMavenPom().getArtifactId()
+    version    = readMavenPom().getVersion()
+    type       = readMavenPom().packaging()
   }
 
   stages {
@@ -12,8 +14,8 @@ pipeline {
     stage('Environment Variables') {
       
       steps {
-        echo "${ARTIFACT_ID}"
-        echo "${VERSION}"
+        echo "${groupId}"
+        echo "${artifactId}"
       }
 
     }
@@ -50,7 +52,7 @@ pipeline {
       steps {
 
         script {
-         nexusArtifactUploader artifacts: [[artifactId: "${ARTIFACT_ID}", classifier: '', file: 'target/results-1.0.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.bit', nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${VERSION}.${BUILD_NUMBER}"
+         nexusArtifactUploader artifacts: [[artifactId: "${artifactId}", classifier: '', file: 'target/results-1.0.war', type: "${type}"]], credentialsId: 'nexus', groupId: "${groupId}", nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${version}.${BUILD_NUMBER}"
         }
 
       }
