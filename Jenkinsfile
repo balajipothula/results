@@ -1,8 +1,22 @@
 pipeline {
 
   agent { label 'master' }
+  
+  environment {
+    ARTIFACT_ID = readMavenPom().getArtifactId()
+    VERSION     = readMavenPom().getVersion()
+  }
 
   stages {
+    
+    stage('Environment Variables') {
+      
+      steps {
+        echo "${ARTIFACT_ID}"
+        echo "${VERSION}"
+      }
+
+    }
 
     stage('Git Clone') {
 
