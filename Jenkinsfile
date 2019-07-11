@@ -50,7 +50,7 @@ pipeline {
       steps {
 
         script {
-         nexusArtifactUploader artifacts: [[artifactId: 'results', classifier: '', file: 'target/results-1.0.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.bit', nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '1.0.${BUILD_NUMBER}'
+         nexusArtifactUploader artifacts: [[artifactId: "${ARTIFACT_ID}", classifier: '', file: 'target/results-1.0.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.bit', nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${VERSION}.${BUILD_NUMBER}"
         }
 
       }
