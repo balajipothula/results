@@ -1,14 +1,16 @@
 pipeline {
 
-  agent { label 'master' }
-  
   environment {
+    
     pom        = readMavenPom()
     groupId    = pom.getGroupId()
     artifactId = pom.getArtifactId()
     version    = pom.getVersion()
     type       = pom.getPackaging()
+    
   }
+
+  agent { label 'master' }
 
   stages {
     
@@ -17,6 +19,8 @@ pipeline {
       steps {
         echo "${groupId}"
         echo "${artifactId}"
+        echo "${version}"
+        echo "${type}"
       }
 
     }
