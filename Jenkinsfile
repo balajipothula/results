@@ -53,7 +53,7 @@ pipeline {
       steps {
 
         script {
-         nexusArtifactUploader artifacts: [[artifactId: "${artifactId}", classifier: '', file: "target/${artifactId}-${version}.${BUILD_NUMBER}.${type}", type: "${type}"]], credentialsId: 'nexus', groupId: "${groupId}", nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${version}.${BUILD_NUMBER}"
+         nexusArtifactUploader artifacts: [[artifactId: "${artifactId}", classifier: '', file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: 'nexus', groupId: "${groupId}", nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${version}.${BUILD_NUMBER}"
         }
 
       }
