@@ -3,10 +3,11 @@ pipeline {
   agent { label 'master' }
   
   environment {
-    groupId    = readMavenPom().getGroupId()
-    artifactId = readMavenPom().getArtifactId()
-    version    = readMavenPom().getVersion()
-    type       = readMavenPom().getPackaging()
+    pom        = readMavenPom()
+    groupId    = pom.getGroupId()
+    artifactId = pom.getArtifactId()
+    version    = pom.getVersion()
+    type       = pom.getPackaging()
   }
 
   stages {
