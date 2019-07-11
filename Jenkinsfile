@@ -48,7 +48,7 @@ pipeline {
       steps {
 
         script {
-          emailext body: 'Build Information', recipientProviders: [developers()], subject: 'Build Report', to: 'balan.pothula@gmail.com'
+          emailext to: 'balan.pothula@gmail.com', recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}'  
         }
 
       }
