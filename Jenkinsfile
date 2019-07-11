@@ -1,13 +1,11 @@
 pipeline {
 
-  environment {
-    
+  environment {  
     pom        = readMavenPom()
     groupId    = pom.getGroupId()
     artifactId = pom.getArtifactId()
     version    = pom.getVersion()
-    type       = pom.getPackaging()
-    
+    type       = pom.getPackaging()   
   }
 
   agent { label 'master' }
@@ -57,7 +55,7 @@ pipeline {
       steps {
 
         script {
-         nexusArtifactUploader artifacts: [[artifactId: "${artifactId}", classifier: '', file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: 'nexus', groupId: "${groupId}", nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${version}.${BUILD_NUMBER}"
+          nexusArtifactUploader artifacts: [[artifactId: "${artifactId}", classifier: '', file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: 'nexus', groupId: "${groupId}", nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: "${version}.${BUILD_NUMBER}"
         }
 
       }
