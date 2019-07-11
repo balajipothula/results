@@ -22,7 +22,7 @@ pipeline {
 
         script {
           withMaven(jdk: 'jdk8u212', maven: 'maven3.6.1') {
-            sh 'mvn clean install deploy'
+            sh 'mvn clean install'
           }
 
         }
@@ -30,6 +30,18 @@ pipeline {
       }
 
     }
+    
+    stage('Nexus Artifact Upload') {
+
+      steps {
+
+        script {
+         nexusArtifactUploader artifacts: [[artifactId: 'results', classifier: '', file: 'target/results.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.bit', nexusUrl: 'nexus.oss.balaji.network:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.0.2'
+        }
+
+      }
+
+    }    
 
     stage('eMail Notification') {
 
