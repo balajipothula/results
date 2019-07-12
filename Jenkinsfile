@@ -8,31 +8,25 @@ pipeline {
     type       = pom.getPackaging()   
   }
 
-  agent { label 'master' }
+  agent { label('master') }
 
   stages {
     
-    stage('Environment Variables') {
-      
+    stage('Environment Variables') {      
       steps {
         echo "${groupId}"
         echo "${artifactId}"
         echo "${version}"
         echo "${type}"
       }
-
     }
 
     stage('Git Clone') {
-
       steps{
-
         script{
-          git credentialsId: 'git', url: 'https://github.com/balajipothula/results.git'
+          git(credentialsId: 'git', url: 'https://github.com/balajipothula/results.git', branch: 'master')
         }
-
       }
-
     }
 
     stage('Maven Compile') {
