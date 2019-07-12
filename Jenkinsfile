@@ -8,7 +8,9 @@ pipeline {
     type       = pom.getPackaging()   
   }
 
-  agent { label("master") }
+  agent {
+    label("master")
+  }
 
   stages {
     
