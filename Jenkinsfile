@@ -36,6 +36,7 @@ pipeline {
         script {
           withMaven(jdk: "jdk8u212", maven: "maven3.6.1") {
             sh "mvn clean install"
+            sh "cp ./target/results-1.1.war results.war"
           }
         }
       }
