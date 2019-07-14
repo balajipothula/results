@@ -7,11 +7,11 @@ pipeline {
     version    = pom.getVersion()
     type       = pom.getPackaging()
     
-    node       = master
+    node       = "master"
   }
 
   agent {
-    label(${node})
+    label("${node}")
   }
 
   stages {
