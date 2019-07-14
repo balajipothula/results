@@ -52,8 +52,7 @@ pipeline {
     
     stage("eMail Notification") {
       steps {
-        emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
-      }
+              }
     }
 
   }
@@ -65,6 +64,7 @@ pipeline {
     }
     success {
       echo "Build Success"
+      emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
     }
     unstable {
       echo "Build Unstable"
