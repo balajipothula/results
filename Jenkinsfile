@@ -46,7 +46,7 @@ pipeline {
 
     stage("Pull Artifact") {
       steps {
-        sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/results/1.1.48/results-1.1.48.war'"
+        sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/${artifactId}/${version}.${BUILD_NUMBER}/${artifactId}-${version}.${BUILD_NUMBER}.${type}'"
       }
     }
 
