@@ -6,13 +6,12 @@ pipeline {
     artifactId = pom.getArtifactId()
     version    = pom.getVersion()
     type       = pom.getPackaging()
-    nodename   = 'master'
   }
 
   agent {
-    label("${nodename}")
+    label("master")
   }
-
+  
   stages {
     
     stage("Environment Variables") {
