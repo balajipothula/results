@@ -58,4 +58,25 @@ pipeline {
 
   }
 
+  post {
+    always {
+      echo "Build Finished"
+    //deleteDir()
+    }
+    success {
+      echo "Build Success"
+      mail(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: "Failed Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}", color: "RED")
+    }
+    unstable {
+      echo "Build Unstable"
+    }
+    failure {
+      echo "Build Failed"
+      mail(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: "Failed Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}", color: "RED")
+    }
+    changed {
+      echo "Build Changed"
+    }
+  }
+
 }
