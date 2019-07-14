@@ -53,23 +53,25 @@ pipeline {
   }
 
   post {
+    
     always {
       echo "Build Finished"
     //deleteDir()
     }
-    success {
-      echo "Build Success"
-      emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
+    changed {
+      echo "Build Changed"
     }
     unstable {
       echo "Build Unstable"
+    }  
+    success {
+      echo "Build Successfull"
+      emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
     }
     failure {
       echo "Build Failed"
     }
-    changed {
-      echo "Build Changed"
-    }
+
   }
 
 }
