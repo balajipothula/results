@@ -52,9 +52,7 @@ pipeline {
     
     stage("eMail Notification") {
       steps {
-        script {
-          emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
-        }
+        emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')
       }
     }
 
