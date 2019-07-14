@@ -1,11 +1,11 @@
 pipeline {
 
-  environment {  
+  environment {
     pom        = readMavenPom()
     groupId    = pom.getGroupId()
     artifactId = pom.getArtifactId()
     version    = pom.getVersion()
-    type       = pom.getPackaging()   
+    type       = pom.getPackaging()
   }
 
   agent {
@@ -14,7 +14,7 @@ pipeline {
 
   stages {
     
-    stage("Environment Variables") {      
+    stage("Environment Variables") {
       steps {
         echo "${groupId}"
         echo "${artifactId}"
@@ -42,13 +42,13 @@ pipeline {
       steps {
         nexusArtifactUploader(artifacts: [[artifactId: "${artifactId}", classifier: "", file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: "nexus", groupId: "${groupId}", nexusUrl: "nexus.oss.balaji.network:8081/nexus", nexusVersion: "nexus2", protocol: "http", repository: "releases", version: "${version}.${BUILD_NUMBER}")
       }
-    }    
+    }
 
     stage("Pull Artifact") {
       steps {
         sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/results/1.1.48/results-1.1.48.war'"
       }
-    }    
+    }
     
     stage("eMail Notification") {
       steps {
