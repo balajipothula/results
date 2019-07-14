@@ -10,7 +10,7 @@ pipeline {
   }
 
   agent {
-    label('${nodename}')
+    label(${nodename})
   }
 
   stages {
