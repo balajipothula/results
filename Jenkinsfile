@@ -16,7 +16,7 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-        echo "${groupId}"
+        echo "GroupId: ${groupId}"
         echo "${artifactId}"
         echo "${version}"
         echo "${type}"
