@@ -19,7 +19,7 @@ pipeline {
         echo "GroupId   : ${groupId}"
         echo "ArtifactId: ${artifactId}"
         echo "Version   : ${version}"
-        echo "Type      : ${type}"
+        echo "Packaging : ${type}"
       }
     }
 
