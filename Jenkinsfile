@@ -32,8 +32,8 @@ pipeline {
     stage("Maven Compile") {
       steps {
         withMaven(jdk: "jdk8u212", maven: "maven3.6.1") {
-          sh "mvn clean install"
-       // sh "mvn clean install sonar:sonar -Dsonar.host.url=http://52.66.126.51:9000 -Dsonar.login=0eba80e0804cf22493cca7c620811867e1d81b5f"
+        //sh "mvn clean install"
+          sh "mvn clean install sonar:sonar -Dsonar.host.url=http://13.233.216.75:9000 -Dsonar.login=6c4c6b142209f3eb997ce839bddc2ef0728b227d"
           sh "cp ./target/results-1.1.war results.war"
         }
       }
