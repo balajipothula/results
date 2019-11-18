@@ -25,12 +25,14 @@ pipeline {
 
     stage("Git Clone") {
       steps{
+        echo "Cloning Source from GIT..."
         git(credentialsId: "git", url: "https://github.com/balajipothula/results.git", branch: "master")
       }
     }
 
     stage("Maven Compile") {
       steps {
+        echo "Compiling Source using Maven..."
         withMaven(jdk: "jdk8u212", maven: "maven3.6.1") {
           sh "mvn clean install"
         //sh "mvn clean install sonar:sonar -Dsonar.host.url=http://13.233.216.75:9000 -Dsonar.login=6c4c6b142209f3eb997ce839bddc2ef0728b227d"
@@ -41,12 +43,14 @@ pipeline {
     
     stage("Nexus Artifact Upload") {
       steps {
+        echo "Uploading Artifact into NexusOSS2..."
       //nexusArtifactUploader(artifacts: [[artifactId: "${artifactId}", classifier: "", file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: "nexus", groupId: "${groupId}", nexusUrl: "nexus.oss.balaji.network:8081/nexus", nexusVersion: "nexus2", protocol: "http", repository: "releases", version: "${version}.${BUILD_NUMBER}")
       }
     }
 
     stage("Pull Artifact") {
       steps {
+        echo "Pulling Artifact from NexusOSS2..."
       //sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/${artifactId}/${version}.${BUILD_NUMBER}/${artifactId}-${version}.${BUILD_NUMBER}.${type}'"
       }
     }
