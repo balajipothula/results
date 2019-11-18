@@ -32,22 +32,22 @@ pipeline {
     stage("Maven Compile") {
       steps {
         withMaven(jdk: "jdk8u212", maven: "maven3.6.1") {
-        //sh "mvn clean install"
-          sh "mvn clean install sonar:sonar -Dsonar.host.url=http://13.233.216.75:9000 -Dsonar.login=6c4c6b142209f3eb997ce839bddc2ef0728b227d"
-          sh "cp ./target/results-1.1.war results.war"
+          sh "mvn clean install"
+        //sh "mvn clean install sonar:sonar -Dsonar.host.url=http://13.233.216.75:9000 -Dsonar.login=6c4c6b142209f3eb997ce839bddc2ef0728b227d"
+        //sh "cp ./target/results-1.1.war results.war"
         }
       }
     }
     
     stage("Nexus Artifact Upload") {
       steps {
-        nexusArtifactUploader(artifacts: [[artifactId: "${artifactId}", classifier: "", file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: "nexus", groupId: "${groupId}", nexusUrl: "nexus.oss.balaji.network:8081/nexus", nexusVersion: "nexus2", protocol: "http", repository: "releases", version: "${version}.${BUILD_NUMBER}")
+      //nexusArtifactUploader(artifacts: [[artifactId: "${artifactId}", classifier: "", file: "target/${artifactId}-${version}.${type}", type: "${type}"]], credentialsId: "nexus", groupId: "${groupId}", nexusUrl: "nexus.oss.balaji.network:8081/nexus", nexusVersion: "nexus2", protocol: "http", repository: "releases", version: "${version}.${BUILD_NUMBER}")
       }
     }
 
     stage("Pull Artifact") {
       steps {
-        sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/${artifactId}/${version}.${BUILD_NUMBER}/${artifactId}-${version}.${BUILD_NUMBER}.${type}'"
+      //sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/${artifactId}/${version}.${BUILD_NUMBER}/${artifactId}-${version}.${BUILD_NUMBER}.${type}'"
       }
     }
 
