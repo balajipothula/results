@@ -20,6 +20,8 @@ pipeline {
         echo "ArtifactId: ${artifactId}"
         echo "Version   : ${version}"
         echo "Packaging : ${type}"
+        echo "Git Commit: ${GIT_COMMIT}"
+        echo "Git URL   : ${GIT_URL}"
         echo "Node Name      : ${NODE_NAME}"
         echo "Job Name       : ${JOB_NAME}"
         echo "Build ID       : ${BUILD_ID}"
