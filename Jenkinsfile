@@ -24,11 +24,11 @@ pipeline {
         echo "Git Branch         : ${GIT_BRANCH}"
         echo "Git Commit         : ${GIT_COMMIT}"
         echo "Git Author Name    : ${env.GIT_AUTHOR_NAME}"
+        echo "Git Local Branch   : ${GIT_LOCAL_BRANCH}"
 
 //        echo "Git Author Email   : ${GIT_AUTHOR_EMAIL}"
 //        echo "Git Committer Name : ${GIT_COMMITTER_NAME}"
 //        echo "Git Committer eMail: ${GIT_COMMITTER_EMAIL}"
-//        echo "Git Local Branch   : ${GIT_LOCAL_BRANCH}"
         echo "Node Name      : ${NODE_NAME}"
         echo "Job Name       : ${JOB_NAME}"
         echo "Build ID       : ${BUILD_ID}"
