@@ -29,7 +29,6 @@ pipeline {
         echo "Jenkins URL    : ${JENKINS_URL}"
         echo "Executor Number: ${EXECUTOR_NUMBER}"
         echo "Workspace      : ${WORKSPACE}"
-        echo "Java Home      : ${JAVA_HOME}"
       }
     }
 
