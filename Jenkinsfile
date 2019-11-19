@@ -20,6 +20,16 @@ pipeline {
         echo "ArtifactId: ${artifactId}"
         echo "Version   : ${version}"
         echo "Packaging : ${type}"
+        echo "Node Name      : ${NODE_NAME}"
+        echo "Job Name       : ${JOB_NAME}"
+        echo "Build ID       : ${BUILD_ID}"
+        echo "Build Number   : ${BUILD_NUMBER}"
+        echo "Build Tag      : ${BUILD_TAG}"
+        echo "Build URL      : ${BUILD_URL}"
+        echo "Jenkins URL    : ${JENKINS_URL}"
+        echo "Executor Number: ${EXECUTOR_NUMBER}"
+        echo "Workspace      : ${WORKSPACE}"
+        echo "Java Home      : ${JAVA_HOME}"
       }
     }
 
