@@ -30,7 +30,7 @@ pipeline {
       }
     }
 
-    stage("Maven Compile") {
+    stage("Maven Compile and SonarQube Code Quality Inspection") {
       steps {
         echo "Compiling Source using Maven..."
         withMaven(jdk: "jdk8u212", maven: "maven3.6.1") {
@@ -52,6 +52,13 @@ pipeline {
       steps {
         echo "Pulling Artifact from NexusOSS2..."
       //sh "curl -O -u admin:admin123 'http://nexus.oss.balaji.network:8081/nexus/content/repositories/releases/com/bit/${artifactId}/${version}.${BUILD_NUMBER}/${artifactId}-${version}.${BUILD_NUMBER}.${type}'"
+      }
+    }
+    
+    stage("Push Artifact") {
+      steps {
+        echo "Pushing Artifact into Tomcat Test Server..."
+      //sh 'curl -v -T ./target/results-1.1.war -u tomcat:tomcat "http://13.233.109.154:8080/manager/text/deploy?path=/&update=true"'
       }
     }
 
