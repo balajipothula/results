@@ -2,7 +2,6 @@ pipeline {
 
   environment {
     pom          = readMavenPom()
-    displayName  = pom.getDisplayName()
     groupId      = pom.getGroupId()
     artifactId   = pom.getArtifactId()
     version      = pom.getVersion()
@@ -18,7 +17,6 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-        echo "DisplayName : ${displayName}"
         echo "GroupId     : ${groupId}"
         echo "ArtifactId  : ${artifactId}"
         echo "Version     : ${version}"
