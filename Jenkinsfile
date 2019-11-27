@@ -16,12 +16,12 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-        echo "GroupId     : ${groupId}"
-        echo "ArtifactId  : ${artifactId}"
-        echo "Version     : ${version}"
-        echo "Packaging   : ${type}"
-        
-      //  echo "DisplayName        : ${env.POM_DISPLAYNAME}"
+//        echo "GroupId     : ${groupId}"
+//        echo "ArtifactId  : ${artifactId}"
+//        echo "Version     : ${version}"
+//        echo "Packaging   : ${type}"
+
+        echo "DisplayName        : ${env.POM_DISPLAYNAME}"
       //  echo "GroupId            : ${env.POM_GROUPID}"
       //  echo "ArtifactId         : ${env.POM_ARTIFACTID}"
       //  echo "Version            : ${env.POM_VERSION}"
