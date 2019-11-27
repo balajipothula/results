@@ -1,10 +1,13 @@
 pipeline {
 
   environment {
+    pom          = readMavenPom()
+    displayName  = pom.getDisplayName()
     groupId      = pom.getGroupId()
     artifactId   = pom.getArtifactId()
     version      = pom.getVersion()
     type         = pom.getPackaging()
+    relativePath = pom.getRelativePath()
   }
 
   agent {
@@ -15,10 +18,12 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
+        echo "DisplayName : ${displayName}"
         echo "GroupId     : ${groupId}"
         echo "ArtifactId  : ${artifactId}"
         echo "Version     : ${version}"
         echo "Packaging   : ${type}"
+        echo "RelativePath: ${relativePath}"
         
       //  echo "DisplayName        : ${env.POM_DISPLAYNAME}"
       //  echo "GroupId            : ${env.POM_GROUPID}"
