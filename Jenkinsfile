@@ -1,11 +1,12 @@
 pipeline {
 
   environment {
-    pom        = readMavenPom()
-    groupId    = pom.getGroupId()
-    artifactId = pom.getArtifactId()
-    version    = pom.getVersion()
-    type       = pom.getPackaging()
+    displayName  = pom.getDisplayName()
+    groupId      = pom.getGroupId()
+    artifactId   = pom.getArtifactId()
+    version      = pom.getVersion()
+    type         = pom.getPackaging()
+    relativePath = pom.getRelativePath()
   }
 
   agent {
@@ -16,10 +17,20 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-        echo "GroupId   : ${groupId}"
-        echo "ArtifactId: ${artifactId}"
-        echo "Version   : ${version}"
-        echo "Packaging : ${type}"
+      //echo "DisplayName : ${displayName}"
+      //echo "GroupId     : ${groupId}"
+      //echo "ArtifactId  : ${artifactId}"
+      //echo "Version     : ${version}"
+      //echo "Packaging   : ${type}"
+      //echo "RelativePath: ${relativePath}"
+        
+        echo "DisplayName        : ${env.POM_DISPLAYNAME}"
+        echo "GroupId            : ${env.POM_GROUPID}"
+        echo "ArtifactId         : ${env.POM_ARTIFACTID}"
+        echo "Version            : ${env.POM_VERSION}"
+        echo "Packaging          : ${env.POM_PACKAGING}"
+        echo "RelativePath       : ${env.POM_RELATIVEPATH}"
+        
         echo "Git URL            : ${env.GIT_URL}"
         echo "Git Branch         : ${env.GIT_BRANCH}"
         echo "Git Commit         : ${env.GIT_COMMIT}"
@@ -27,15 +38,16 @@ pipeline {
         echo "Git Author Email   : ${env.GIT_AUTHOR_EMAIL}"
         echo "Git Committer Name : ${env.GIT_COMMITTER_NAME}"
         echo "Git Committer eMail: ${env.GIT_COMMITTER_EMAIL}"
-        echo "Node Name      : ${NODE_NAME}"
-        echo "Job Name       : ${JOB_NAME}"
-        echo "Build ID       : ${BUILD_ID}"
-        echo "Build Number   : ${BUILD_NUMBER}"
-        echo "Build Tag      : ${BUILD_TAG}"
-        echo "Build URL      : ${BUILD_URL}"
-        echo "Jenkins URL    : ${JENKINS_URL}"
-        echo "Executor Number: ${EXECUTOR_NUMBER}"
-        echo "Workspace      : ${WORKSPACE}"
+        
+        echo "Node Name          : ${env.NODE_NAME}"
+        echo "Job Name           : ${env.JOB_NAME}"
+        echo "Build ID           : ${env.BUILD_ID}"
+        echo "Build Number       : ${env.BUILD_NUMBER}"
+        echo "Build Tag          : ${env.BUILD_TAG}"
+        echo "Build URL          : ${env.BUILD_URL}"
+        echo "Jenkins URL        : ${env.JENKINS_URL}"
+        echo "Executor Number    : ${env.EXECUTOR_NUMBER}"
+        echo "Workspace          : ${env.WORKSPACE}"
       }
     }
 
