@@ -24,7 +24,6 @@ pipeline {
         echo "Git Branch         : ${env.GIT_BRANCH}"
         echo "Git Commit         : ${env.GIT_COMMIT}"
         echo "Git Author Name    : ${env.GIT_AUTHOR_NAME}"
-        echo "Git Local Branch   : ${env.GIT_LOCAL_BRANCH}"
         echo "Git Author Email   : ${env.GIT_AUTHOR_EMAIL}"
         echo "Git Committer Name : ${env.GIT_COMMITTER_NAME}"
         echo "Git Committer eMail: ${env.GIT_COMMITTER_EMAIL}"
