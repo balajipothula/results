@@ -6,7 +6,6 @@ pipeline {
     artifactId   = pom.getArtifactId()
     version      = pom.getVersion()
     type         = pom.getPackaging()
-    relativePath = pom.getRelativePath()
   }
 
   agent {
@@ -21,7 +20,6 @@ pipeline {
         echo "ArtifactId  : ${artifactId}"
         echo "Version     : ${version}"
         echo "Packaging   : ${type}"
-        echo "RelativePath: ${relativePath}"
         
       //  echo "DisplayName        : ${env.POM_DISPLAYNAME}"
       //  echo "GroupId            : ${env.POM_GROUPID}"
