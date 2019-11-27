@@ -16,15 +16,10 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-//        echo "GroupId     : ${groupId}"
-//        echo "ArtifactId  : ${artifactId}"
-//        echo "Version     : ${version}"
-//        echo "Packaging   : ${type}"
-
-        echo "GroupId            : ${env.POM_GROUPID}"
-        echo "ArtifactId         : ${env.POM_ARTIFACTID}"
-        echo "Version            : ${env.POM_VERSION}"
-        echo "Packaging          : ${env.POM_PACKAGING}"
+        echo "GroupId            : ${groupId}"
+        echo "ArtifactId         : ${artifactId}"
+        echo "Version            : ${version}"
+        echo "Packaging          : ${type}"
         
         echo "Git URL            : ${env.GIT_URL}"
         echo "Git Branch         : ${env.GIT_BRANCH}"
