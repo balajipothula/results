@@ -51,7 +51,7 @@ pipeline {
       }
     }
 
-    stage("Git Clone") {
+    stage("Git Clone...") {
       steps{
         echo "Cloning Source from GitHub..."
         git(credentialsId: "git", url: "https://github.com/balajipothula/results.git", branch: "master")
