@@ -17,19 +17,19 @@ pipeline {
     
     stage("Environment Variables") {
       steps {
-      //echo "DisplayName : ${displayName}"
-      //echo "GroupId     : ${groupId}"
-      //echo "ArtifactId  : ${artifactId}"
-      //echo "Version     : ${version}"
-      //echo "Packaging   : ${type}"
-      //echo "RelativePath: ${relativePath}"
+        echo "DisplayName : ${displayName}"
+        echo "GroupId     : ${groupId}"
+        echo "ArtifactId  : ${artifactId}"
+        echo "Version     : ${version}"
+        echo "Packaging   : ${type}"
+        echo "RelativePath: ${relativePath}"
         
-        echo "DisplayName        : ${env.POM_DISPLAYNAME}"
-        echo "GroupId            : ${env.POM_GROUPID}"
-        echo "ArtifactId         : ${env.POM_ARTIFACTID}"
-        echo "Version            : ${env.POM_VERSION}"
-        echo "Packaging          : ${env.POM_PACKAGING}"
-        echo "RelativePath       : ${env.POM_RELATIVEPATH}"
+      //  echo "DisplayName        : ${env.POM_DISPLAYNAME}"
+      //  echo "GroupId            : ${env.POM_GROUPID}"
+      //  echo "ArtifactId         : ${env.POM_ARTIFACTID}"
+      //  echo "Version            : ${env.POM_VERSION}"
+      //  echo "Packaging          : ${env.POM_PACKAGING}"
+      //  echo "RelativePath       : ${env.POM_RELATIVEPATH}"
         
         echo "Git URL            : ${env.GIT_URL}"
         echo "Git Branch         : ${env.GIT_BRANCH}"
