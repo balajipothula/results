@@ -99,7 +99,7 @@ pipeline {
     }
     failure {
       echo "Build Failed"
-    //error("Build Failed")
+      error("Build Failed")
       emailext(to: "balan.pothula@gmail.com", recipientProviders: [developers()], subject: '${DEFAULT_SUBJECT}', body: '${DEFAULT_CONTENT}')      
     }
 
