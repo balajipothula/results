@@ -21,12 +21,10 @@ pipeline {
 //        echo "Version     : ${version}"
 //        echo "Packaging   : ${type}"
 
-        echo "DisplayName        : ${env.POM_DISPLAYNAME}"
-      //  echo "GroupId            : ${env.POM_GROUPID}"
-      //  echo "ArtifactId         : ${env.POM_ARTIFACTID}"
-      //  echo "Version            : ${env.POM_VERSION}"
-      //  echo "Packaging          : ${env.POM_PACKAGING}"
-      //  echo "RelativePath       : ${env.POM_RELATIVEPATH}"
+        echo "GroupId            : ${env.POM_GROUPID}"
+        echo "ArtifactId         : ${env.POM_ARTIFACTID}"
+        echo "Version            : ${env.POM_VERSION}"
+        echo "Packaging          : ${env.POM_PACKAGING}"
         
         echo "Git URL            : ${env.GIT_URL}"
         echo "Git Branch         : ${env.GIT_BRANCH}"
