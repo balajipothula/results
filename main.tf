@@ -102,7 +102,7 @@ resource "aws_instance" "platform" {
     sudo apt -y install nginx software-properties-common
     sudo add-apt-repository -y ppa:deadsnakes/ppa
     sudo apt -y update
-    sudo apt -y install python3.8
+    sudo apt -y install python3.8 python3-pip
     sudo service nginx start
   USER_DATA
 
